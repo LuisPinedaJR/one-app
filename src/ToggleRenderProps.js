@@ -11,10 +11,13 @@ export default class Toggle extends Component {
         })
     }
   render() {
+      const { render } = this.props;
     return (
       <div>
-        {this.state.on && this.props.children}
-        <button onClick={this.toggle}>SHOW/HIDE</button>
+        {render({
+            on: this.state.on,
+            toggle: this.toggle
+        })}
       </div>
     )
   }
