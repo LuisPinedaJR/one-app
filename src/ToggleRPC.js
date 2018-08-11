@@ -12,7 +12,7 @@ export default class Toggle extends Component {
     }
   render() {
       const { children } = this.props;
-    return children({
+        return children({
             on: this.state.on,
             toggle: this.toggle
         });
