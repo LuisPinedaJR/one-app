@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Toggle from './ToggleRPC';
 import Portal from './Portal';
+import Modal from './Modal';
 
 class App extends Component {
   render() {
@@ -12,12 +13,14 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
+        
         <Toggle>
         {({on, toggle})=>(
           <Fragment>
-            { on && <h1>Michael Scott Paper company</h1>}
-              <button onClick={toggle}>SHOW/HIDE</button>
-              <Portal>{on && <h1>Hi! I'm in a Portal</h1>}</Portal>
+            <button onClick={toggle}>LOGIN</button>
+            <Modal on={on} toggle={toggle}>
+              <h1>Still in a Modal!</h1>
+            </Modal>
           </Fragment>
         )}
         </Toggle>
