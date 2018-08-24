@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { UserContext } from './UserContext'
+import React, { Component } from 'react';
+import { UserContext } from './UserContext';
 
 export default class UserProvider extends Component {
     state = {
@@ -29,5 +29,6 @@ export default class UserProvider extends Component {
       );
       }
   }
+
 
 

@@ -9,8 +9,7 @@ export const Card = styled.div`
     colors: ${black};
     ${elevation[4]};
     ${transition({
-		ease: 'ease-in',
-		length: '1s'
+		property: 'box-shadow'
 	})};
     &:hover {
         ${elevation[5]}
