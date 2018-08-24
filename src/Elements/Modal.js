@@ -13,9 +13,9 @@ export default class Modal extends Component {
 			<Portal>
 				<Transition 
 					native
-					from={{ opacity: 0, bgOpacity: 0, y: -50 }}
-					enter={{ opacity: 1, bgOpacity: 0.5, y: 0 }} 
-					leave={{ opacity: 0, bgOpacity: 0, y: 50 }}
+					from={{ opacity: 0, bgOpacity: 0, y: '-50px' }}
+					enter={{ opacity: 1, bgOpacity: 0.5, y: '0px' }} 
+					leave={{ opacity: 0, bgOpacity: 0, y: '50px' }}
 				>
 
 					{on && 
