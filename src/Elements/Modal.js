@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Transition, animated } from 'react-spring';
+import { Transition, animated, config } from 'react-spring';
 
 import { Portal, absolute } from 'Utilities';
 import Icon from './Icon';
@@ -13,6 +13,7 @@ export default class Modal extends Component {
 			<Portal>
 				<Transition 
 					native
+					config = {config.gentle}
 					from={{ opacity: 0, bgOpacity: 0, y: '-50px' }}
 					enter={{ opacity: 1, bgOpacity: 0.5, y: '0px' }} 
 					leave={{ opacity: 0, bgOpacity: 0, y: '50px' }}
@@ -32,7 +33,8 @@ export default class Modal extends Component {
 									<CloseButton 
 										onClick={toggle}>
 										<Icon 
-											name="close"/>
+											name="close"
+										/>
 									</CloseButton>
 									<div>{children}</div>
 								</ModalCard>
