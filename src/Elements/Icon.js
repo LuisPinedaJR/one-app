@@ -7,7 +7,7 @@ export default class Icon extends Component {
   render() {
     switch (this.props.name){
         case 'close':
-        return (
+        return (    
             <svg
             x="0px"
             y="0px"
