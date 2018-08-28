@@ -1,11 +1,37 @@
 import React, { Component } from 'react';
+import { Gesture} from 'react-with-gesture';
+import { Spring, animated, interpolate } from 'react-spring';
+import { Card } from 'Elements';
+
+const AnimCard = Card.withComponent(animated.div);
 
 export default class Drag extends Component {
 	render() {
 		return (
-			<div>
-				<h1>Drag</h1>
-			</div>
+			<Gesture>
+				{ ({ down, xDelta }) => (
+					<Spring
+						native
+						to={{
+							x: down ? xDelta : 0
+						}}
+						immmediate = {name => down && name === 'x' }
+					>
+						{({ x }) => (
+							<AnimCard 
+								style={{
+									transform: x.interpolate(x => `translateX(${x}px)`)
+								}}
+							>
+								<h1>Drag ME</h1>
+							</AnimCard>
+						)}
+
+
+
+					</Spring>
+				)}	
+			</Gesture>
 		);
 	}
 }

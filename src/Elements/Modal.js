@@ -31,10 +31,9 @@ export default class Modal extends Component {
 									}}
 								>
 									<CloseButton 
-										onClick={toggle}>
-										<Icon 
-											name="close"
-										/>
+										onClick={toggle}
+									>
+										<Icon name="close" />
 									</CloseButton>
 									<div>{children}</div>
 								</ModalCard>
