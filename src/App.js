@@ -1,11 +1,10 @@
 import React, { Component, Fragment } from 'react';
-import { Transition } from 'react-spring';
 
 import logo from './logo.svg';
 import './App.css';
 import { Toggle } from 'Utilities';
-import { Modal, Card } from 'Elements';
-import User from './User';
+import { Modal } from 'Elements';
+
 import UserProvider from './UserProvider';
 import Drag from './Drag';
 
@@ -18,8 +17,10 @@ class App extends Component {
 						<img src={logo} className="App-logo" alt="logo" />
 						<h1 className="App-title">Welcome to React</h1>
 					</header>
-					<Drag />
           
+					<Drag>
+					</Drag>
+
 					<Toggle>
 						{({on, toggle})=>(
 							<Fragment>
@@ -36,18 +37,18 @@ class App extends Component {
 	}
 }
 
-const Header = (styles) => (
-	<Card style={{ 
-		opacity: styles.opacity,
-		background: styles.bg,
-		overflow: 'hidden',
-		height: styles.height
-	}}>
-		<h1>Show Me</h1>
-		<h3>{styles.bg}</h3>
-	</Card>
+// const Header = (styles) => (
+// 	<Card style={{ 
+// 		opacity: styles.opacity,
+// 		background: styles.bg,
+// 		overflow: 'hidden',
+// 		height: styles.height
+// 	}}>
+// 		<h1>Show Me</h1>
+// 		<h3>{styles.bg}</h3>
+// 	</Card>
   
-);
+// );
 
 export default App;
 
